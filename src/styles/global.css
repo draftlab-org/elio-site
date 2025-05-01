@@ -1,1 +1,20 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-beige: #f6f2eb;
+  --color-brand-navy-50: #d4e8fb;
+  --color-brand-navy-100: #4292ea;
+  --color-brand-purple: #9c63f2;
+  --color-brand-salmon: #ffbda6;
+  --color-brand-mint: #cff9ef;
+  --color-brand-sky-50: #edf3fe;
+  --color-brand-sky-100: #deedff;
+  --color-brand-gray-50: #efefef;
+  --color-brand-gray-100: #dedede;
+  --color-brand-tag: #2144411a;
+}
+
+@theme inline {
+  --font-serif: var(--font-petrona);
+  --font-sans: var(--font-outfit);
+}

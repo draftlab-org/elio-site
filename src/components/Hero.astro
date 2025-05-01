@@ -1,0 +1,25 @@
+---
+import { Image } from "astro:assets";
+import elioSig from "@assets/elio-sig.png";
+---
+
+<section id="hero" class="h-screen">
+  <div class="grid grid-cols-12 gap-8">
+    <div class="col-span-full md:col-span-4">
+      <Image class="w-72" src={elioSig} alt="Elio Qoshi signature" />
+    </div>
+    <div
+      class="order-first col-span-10 font-serif text-[2rem] leading-10 font-normal md:order-last md:col-span-8"
+    >
+      <p class="mb-8">
+        I’m Elio — a principal designer based in Berlin, working at the
+        intersection of usability, privacy, and open source.
+      </p>
+      <p class="">
+        I design accessible, resilient tools for people and communities under
+        pressure. I believe design should serve the margins — not maintain the
+        center.
+      </p>
+    </div>
+  </div>
+</section>

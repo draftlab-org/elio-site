@@ -1,18 +1,12 @@
 ---
-import './src/styles/global.css'
-
+import "./src/styles/global.css";
+import Head from "../components/Head.astro";
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+  <Head />
+  <body class="bg-brand-beige mx-auto w-9/12 pt-24">
+    <slot />
+  </body>
 </html>
