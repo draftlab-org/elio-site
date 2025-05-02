@@ -1,0 +1,37 @@
+- id: Ura Design
+  description: >-
+    the design agency helping +100 open source projects succeed
+  role: Principal Designer & Founder
+  period: 2016-Today
+  image:
+    src: assets/ura-logo.svg
+    align: center
+    colorized: false
+  background:
+    primary_color: navy-50
+  container_size: short
+- id: Thunderbird
+  description: >-
+    refreshing the visual identity of the leading email client
+  role: Design Contributor
+  period: 2017-2022
+  image:
+    src: assets/thunderbird.png
+    align: bottom
+    colorized: false
+  background:
+    primary_color: sky-100
+    secondary_color: purple
+  container_size: venti
+- id: Ubuntu
+  description: >-
+    the most popular Linux operating system with over 40 Million users
+  role: UX Designer
+  period: 2021-2024
+  image:
+    src: assets/ubuntu.png
+    align: bottom
+    colorized: false
+  background:
+    primary_color: salmon
+  container_size: grande
