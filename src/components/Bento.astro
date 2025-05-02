@@ -2,56 +2,71 @@
 import { Image } from "astro:assets";
 import { marked } from "marked";
 import { getCollection, getEntry } from "astro:content";
-const portfolio = await getCollection("portfolio");
 import { twMerge } from "tailwind-merge";
+
+const portfolio = await getCollection("portfolio");
 
 const styles = portfolio.map((item) => ({
   primary: `bg-brand-${item.data.background.primary_color}`,
-  secondary: `bg-brand-${item.data.background.secondary_color}`,
+  secondary: `bg-linear-to-br from-brand-${item.data.background.primary_color} to-brand-${item.data.background.secondary_color}`,
 }));
 
 // const styles = [
 //   {
-//     primary: `bg-brand-navy-50`,
+//     primary: `bg-brand-sky-50`,
 //   },
 //   {
-//     primary: `bg-brand-purple`,
+//     primary: `bg-brand-sky-100`,
 //   },
 //   {
-//     primary: `bg-brand-salmon`,
+//     primary: `bg-brand-mint`,
 //   },
 // ];
 ---
 
 <section id="bento-grid" class="">
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-    <div class="mt-10 grid gap-6 sm:mt-16 lg:grid-cols-2 lg:grid-rows-16">
+    <div
+      class="mt-10 grid grid-flow-col gap-6 sm:mt-16 lg:grid-cols-2 lg:grid-rows-3"
+    >
       {
         portfolio &&
           portfolio.map((item, index) => (
             <div
-              class:list={[
-                styles[index].primary,
-                `col-span-1 row-span-6 flex flex-col gap-8 rounded-2xl border-[1px] border-black p-6`,
-              ]}
+              class={twMerge(
+                "col-span-1 flex flex-col justify-between gap-8 rounded-2xl border-[1px] border-black p-6 pb-0",
+                item.data.background.secondary_color
+                  ? styles[index].secondary
+                  : styles[index].primary,
+                item.data.container_size === "short" && "row-span-1",
+                item.data.container_size === "tall" && "row-span-2",
+                item.data.container_size === "grande" && "row-span-3",
+              )}
             >
-              <p class="text-xl font-light">
-                <span class="font-semibold">{item.data.id}</span> /
-                {item.data.description}
-              </p>
-              <div class="tags mt-2 inline-flex gap-2">
-                <span class="inline-flex items-center rounded-md bg-black/10 px-2 py-1 text-base font-medium text-black">
-                  {item.data.role}
-                </span>
-                <span class="inline-flex items-center rounded-md bg-black/10 px-2 py-1 text-base font-medium text-black">
-                  {item.data.period}
-                </span>
+              <div>
+                <p class="text-xl font-light">
+                  <span class="font-semibold">{item.data.id}</span> /
+                  {item.data.description}
+                </p>
+                <div class="tags mt-2 inline-flex gap-2">
+                  <span class="inline-flex items-center rounded-md bg-black/10 px-2 py-1 text-base font-medium text-black">
+                    {item.data.role}
+                  </span>
+                  <span class="inline-flex items-center rounded-md bg-black/10 px-2 py-1 text-base font-medium text-black">
+                    {item.data.period}
+                  </span>
+                </div>
               </div>
-              <div class="mx-12">
+              <div
+                class={twMerge(
+                  "mb-6 px-12",
+                  item.data.image.align === "bottom" && "mb-0",
+                )}
+              >
                 <Image
                   src={item.data.image.src}
                   alt={item.data.id}
-                  class="w-full object-cover"
+                  class="fill-brand-purple mx-auto min-w-48"
                 />
               </div>
             </div>

@@ -5,6 +5,8 @@ import tailwindcss from "@tailwindcss/vite";
 
 import netlify from "@astrojs/netlify";
 
+import react from "@astrojs/react";
+
 // https://astro.build/config
 export default defineConfig({
   experimental: {
@@ -29,4 +31,5 @@ export default defineConfig({
   },
 
   adapter: netlify(),
+  integrations: [react()],
 });
