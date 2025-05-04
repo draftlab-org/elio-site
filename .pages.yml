@@ -1,6 +1,6 @@
 media:
-  input: assets
-  output: /src/assets
+  input: src/assets
+  output: assets
 content:
   - name: hero
     label: Hero content
