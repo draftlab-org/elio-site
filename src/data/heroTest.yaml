@@ -1,3 +1,6 @@
-id:
-  content: this is me writing **something**
-  image: /src/assets/draftlab-logo.svg
+id: hero
+content: |-
+  How about these apples
+
+  And also there
+image: /src/assets/draftlab-logo.svg
