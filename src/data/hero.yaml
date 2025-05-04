@@ -1,7 +1,10 @@
 - id: hero
   content: >-
-    I’m Elio — a principal designer based in Berlin, working at the intersection of usability, privacy, and open source.
+    I’m Elio — a principal designer based in Berlin, working at the intersection
+    of usability, privacy, and open source.
 
 
-    I design accessible, resilient tools for people and communities under pressure. I believe design should serve the margins — not maintain the center.
+    I design accessible, _resilient tools_ for people and communities under
+    pressure. I believe design should serve the margins — not maintain the
+    center.
   image: assets/elio-sig.png
