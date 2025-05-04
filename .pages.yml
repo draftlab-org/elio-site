@@ -1,3 +1,21 @@
 media:
   input: src/assets
   output: /src/assets
+content:
+  - name: hero
+    label: Hero content
+    path: src/data/hero.yaml
+    type: file
+    fields:
+      - name: id
+        label: Section name
+        type: object
+        fields:
+          - content: content
+            label: Content
+            type: rich-text
+            options:
+              media: false
+          - name: image
+            label: Image
+            type: image
