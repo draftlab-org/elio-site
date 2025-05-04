@@ -55,12 +55,6 @@ content:
             label: Image
             required: true
             type: image
-          - name: container_size
-            label: Bento item size
-            required: true
-            type: select
-            options:
-              values: ["short", "tall", "grande", "venti"]
           - name: align
             label: Alignment
             required: true
@@ -71,6 +65,12 @@ content:
           - name: colorized
             type: boolean
             default: false
+      - name: container_size
+        label: Bento item size
+        required: true
+        type: select
+        options:
+          values: ["short", "tall", "grande", "venti"]
       - name: background
         label: Background color
         type: object
