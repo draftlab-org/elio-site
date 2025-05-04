@@ -9,7 +9,6 @@
   container_size: short
   background:
     primary_color: navy50
-    secondary_color: navy50
 - id: Thunderbird
   description: refreshing the visual identity of the leading email client
   role: Design Contributor
@@ -33,7 +32,6 @@
   container_size: tall
   background:
     primary_color: salmon
-    secondary_color: salmon
 - id: Cultivating Design Meetup
   description: the Berlin design meetup for +100 of attendees who care about
     sustainability, accessibility and open source

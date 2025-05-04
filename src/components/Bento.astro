@@ -104,7 +104,10 @@ const styles = portfolio.map(({ data }) => ({
                 <Image
                   src={data.image.src}
                   alt={data.id}
-                  class="fill-brand-purple mx-auto min-w-48"
+                  class={twMerge(
+                    "fill-brand-purple mx-auto min-w-48",
+                    data.image.colorized && "mix-blend-luminosity",
+                  )}
                 />
               </div>
             </div>
