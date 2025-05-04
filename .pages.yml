@@ -11,6 +11,7 @@ content:
       - name: id
         label: Section name
         type: object
+        list: true
         fields:
         - name: content
           label: Content
