@@ -8,7 +8,7 @@
     align: center
     colorized: false
   background:
-    primary_color: navy-50
+    primary_color: navy50
   container_size: short
 - id: Ubuntu
   description: >-
@@ -32,6 +32,6 @@
     align: bottom
     colorized: false
   background:
-    primary_color: navy-50
+    primary_color: navy50
     secondary_color: purple
   container_size: tall

@@ -1,27 +1,64 @@
 ---
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import { marked } from "marked";
-import { getCollection, getEntry } from "astro:content";
 import { twMerge } from "tailwind-merge";
 
 const portfolio = await getCollection("portfolio");
 
-const styles = portfolio.map((item) => ({
-  primary: `bg-brand-${item.data.background.primary_color}`,
-  secondary: `bg-linear-to-br from-brand-${item.data.background.primary_color} to-brand-${item.data.background.secondary_color}`,
+console.log(portfolio);
+
+const colorStyles = {
+  solid: {
+    beige: "bg-brand-beige",
+    navy50: "bg-brand-navy-50",
+    navy100: "bg-brand-navy-100",
+    purple: "bg-brand-purple",
+    salmon: "bg-brand-salmon",
+    mint: "bg-brand-mint",
+    sky50: "bg-brand-sky-50",
+    sky100: "bg-brand-sky-100",
+    gray50: "bg-brand-gray-50",
+    gray100: "bg-brand-gray-100",
+  },
+  from: {
+    beige: "from-brand-beige",
+    navy50: "from-brand-navy-50",
+    navy100: "from-brand-navy-100",
+    purple: "from-brand-purple",
+    salmon: "from-brand-salmon",
+    mint: "from-brand-mint",
+    sky50: "from-brand-sky-50",
+    sky100: "from-brand-sky-100",
+    gray50: "from-brand-gray-50",
+    gray100: "from-brand-gray-100",
+  },
+  to: {
+    beige: "to-brand-beige",
+    navy50: "to-brand-navy-50",
+    navy100: "to-brand-navy-100",
+    purple: "to-brand-purple",
+    salmon: "to-brand-salmon",
+    mint: "to-brand-mint",
+    sky50: "to-brand-sky-50",
+    sky100: "to-brand-sky-100",
+    gray50: "to-brand-gray-50",
+    gray100: "to-brand-gray-100",
+  },
+};
+
+const styles = portfolio.map(({ data }) => ({
+  primary: colorStyles.solid[data.background.primary_color],
+  secondary:
+    data.background.secondary_color &&
+    twMerge(
+      "bg-linear-to-br",
+      colorStyles.from[data.background.primary_color],
+      colorStyles.to[data.background.secondary_color],
+    ),
 }));
 
-// const styles = [
-//   {
-//     primary: `bg-brand-sky-50`,
-//   },
-//   {
-//     primary: `bg-brand-sky-100`,
-//   },
-//   {
-//     primary: `bg-brand-mint`,
-//   },
-// ];
+console.log(styles);
 ---
 
 <section id="bento-grid" class="">
@@ -31,41 +68,41 @@ const styles = portfolio.map((item) => ({
     >
       {
         portfolio &&
-          portfolio.map((item, index) => (
+          portfolio.map(({ data }, index) => (
             <div
               class={twMerge(
                 "col-span-1 flex flex-col justify-between gap-8 rounded-2xl border-[1px] border-black p-6 pb-0",
-                item.data.background.secondary_color
+                data.background.secondary_color
                   ? styles[index].secondary
                   : styles[index].primary,
-                item.data.container_size === "short" && "row-span-1",
-                item.data.container_size === "tall" && "row-span-2",
-                item.data.container_size === "grande" && "row-span-3",
+                data.container_size === "short" && "row-span-1",
+                data.container_size === "tall" && "row-span-2",
+                data.container_size === "grande" && "row-span-3",
               )}
             >
               <div>
                 <p class="text-xl font-light">
-                  <span class="font-semibold">{item.data.id}</span> /
-                  {item.data.description}
+                  <span class="font-semibold">{data.id}</span> /
+                  <span set:html={marked.parseInline(data.description)} />
                 </p>
                 <div class="tags mt-2 inline-flex gap-2">
                   <span class="inline-flex items-center rounded-md bg-black/10 px-2 py-1 text-base font-medium text-black">
-                    {item.data.role}
+                    {data.role}
                   </span>
                   <span class="inline-flex items-center rounded-md bg-black/10 px-2 py-1 text-base font-medium text-black">
-                    {item.data.period}
+                    {data.period}
                   </span>
                 </div>
               </div>
               <div
                 class={twMerge(
                   "mb-6 px-12",
-                  item.data.image.align === "bottom" && "mb-0",
+                  data.image.align === "bottom" && "mb-0",
                 )}
               >
                 <Image
-                  src={item.data.image.src}
-                  alt={item.data.id}
+                  src={data.image.src}
+                  alt={data.id}
                   class="fill-brand-purple mx-auto min-w-48"
                 />
               </div>

@@ -1,17 +1,18 @@
 import { defineCollection, z } from "astro:content";
 import { file } from "astro/loaders";
 
+// hardcoding list of colors so we can use it as enum
 const colors = [
   "beige",
-  "navy-50",
-  "navy-100",
+  "navy50",
+  "navy100",
   "purple",
   "salmon",
   "mint",
-  "sky-50",
-  "sky-100",
-  "gray-50",
-  "gray-100",
+  "sky50",
+  "sky100",
+  "gray50",
+  "gray100",
 ] as const;
 
 const portfolio = defineCollection({

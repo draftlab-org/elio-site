@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
-import { marked } from "marked";
 import { getEntry } from "astro:content";
+import { marked } from "marked";
 const hero = await getEntry("hero", "hero");
 
 const content = hero && marked.parse(hero.data.content);
