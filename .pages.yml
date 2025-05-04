@@ -11,7 +11,7 @@ content:
         label: Section name
         type: object
         fields:
-          - content: content
+          - name: content
             label: Content
             type: rich-text
             options:
