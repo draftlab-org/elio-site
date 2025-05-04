@@ -22,3 +22,90 @@ content:
       - name: image
         label: Image
         type: image
+  - name: portfolio
+    label: Portfolio
+    path: src/data/portfolio.yaml
+    type: file
+    format: yaml
+    list: true
+    fields:
+      - name: id
+        label: Project name
+        type: string
+        required: true
+      - name: description
+        label: Description
+        required: true
+        type: rich-text
+        options:
+          media: false
+      - name: role
+        label: Role
+        type: string
+        required: true
+      - name: period
+        label: Period
+        type: string
+        required: true
+      - name: image
+        label: Image Info
+        type: object
+        fields:
+          - name: src
+            label: Image
+            required: true
+            type: image
+          - name: container_size
+            label: Bento item size
+            required: true
+            type: select
+            options:
+              values: ["short", "tall", "grande", "venti"]
+          - name: align
+            label: Alignment
+            required: true
+            type: select
+            options:
+              values: ["center", "bottom"]
+              default: center
+          - name: colorized
+            type: boolean
+            default: false
+      - name: background
+        label: Background color
+        type: object
+        fields:
+          - name: primary_color
+            label: Primary color
+            type: select
+            required: true
+            options:
+              [
+                "beige",
+                "navy50",
+                "navy100",
+                "purple",
+                "salmon",
+                "mint",
+                "sky50",
+                "sky100",
+                "gray50",
+                "gray100",
+              ]
+          - name: secondary_color
+            label: Secondary color
+            description: "If you select a secondary color, the background will be a gradient"
+            type: select
+            options:
+              [
+                "beige",
+                "navy50",
+                "navy100",
+                "purple",
+                "salmon",
+                "mint",
+                "sky50",
+                "sky100",
+                "gray50",
+                "gray100",
+              ]
