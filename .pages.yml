@@ -1,5 +1,5 @@
 media:
-  input: src/assets
+  input: assets
   output: /src/assets
 content:
   - name: hero
