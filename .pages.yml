@@ -80,32 +80,34 @@ content:
             type: select
             required: true
             options:
-              [
-                "beige",
-                "navy50",
-                "navy100",
-                "purple",
-                "salmon",
-                "mint",
-                "sky50",
-                "sky100",
-                "gray50",
-                "gray100",
-              ]
+              values:
+                [
+                  "beige",
+                  "navy50",
+                  "navy100",
+                  "purple",
+                  "salmon",
+                  "mint",
+                  "sky50",
+                  "sky100",
+                  "gray50",
+                  "gray100",
+                ]
           - name: secondary_color
             label: Secondary color
             description: "If you select a secondary color, the background will be a gradient"
             type: select
             options:
-              [
-                "beige",
-                "navy50",
-                "navy100",
-                "purple",
-                "salmon",
-                "mint",
-                "sky50",
-                "sky100",
-                "gray50",
-                "gray100",
-              ]
+              values:
+                [
+                  "beige",
+                  "navy50",
+                  "navy100",
+                  "purple",
+                  "salmon",
+                  "mint",
+                  "sky50",
+                  "sky100",
+                  "gray50",
+                  "gray100",
+                ]
