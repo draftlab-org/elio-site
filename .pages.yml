@@ -10,14 +10,13 @@ content:
     fields:
       - name: id
         label: Section name
-        type: string
-        default: "hero"
-        hidden: true
-      - name: content
-        label: Content
-        type: rich-text
-        options:
-          media: false
-      - name: image
-        label: Image
-        type: image
+        type: object
+        fields:
+        - name: content
+          label: Content
+          type: rich-text
+          options:
+            media: false
+        - name: image
+          label: Image
+          type: image
