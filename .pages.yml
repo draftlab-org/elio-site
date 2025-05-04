@@ -4,7 +4,7 @@ media:
 content:
   - name: hero
     label: Hero content
-    path: src/data/hero.yaml
+    path: src/data/heroTest.yaml
     type: file
     fields:
       - name: id
