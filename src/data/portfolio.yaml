@@ -10,18 +10,6 @@
   background:
     primary_color: navy50
   container_size: short
-- id: Ubuntu
-  description: >-
-    the most popular Linux operating system with over 40 Million users
-  role: UX Designer
-  period: 2021-2024
-  image:
-    src: assets/ubuntu.png
-    align: bottom
-    colorized: false
-  background:
-    primary_color: salmon
-  container_size: tall
 - id: Thunderbird
   description: >-
     refreshing the visual identity of the leading email client
@@ -34,4 +22,16 @@
   background:
     primary_color: navy50
     secondary_color: purple
+  container_size: tall
+- id: Ubuntu
+  description: >-
+    the most popular Linux operating system with over 40 Million users
+  role: UX Designer
+  period: 2021-2024
+  image:
+    src: assets/ubuntu.png
+    align: bottom
+    colorized: false
+  background:
+    primary_color: salmon
   container_size: tall

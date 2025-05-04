@@ -64,7 +64,7 @@ console.log(styles);
 <section id="bento-grid" class="">
   <div class="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
     <div
-      class="mt-10 grid grid-flow-col gap-6 sm:mt-16 lg:grid-cols-2 lg:grid-rows-3"
+      class="mt-10 grid grid-flow-dense auto-rows-fr grid-cols-1 grid-rows-12 gap-6 sm:mt-16 lg:grid-cols-2"
     >
       {
         portfolio &&
@@ -78,6 +78,7 @@ console.log(styles);
                 data.container_size === "short" && "row-span-1",
                 data.container_size === "tall" && "row-span-2",
                 data.container_size === "grande" && "row-span-3",
+                data.container_size === "venti" && "row-span-4",
               )}
             >
               <div>
