@@ -1,10 +1,13 @@
 ---
 import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import { getEntry } from "astro:content";
 import { marked } from "marked";
-const hero = await getEntry("hero", "hero");
+const hero = await getCollection("hero");
 
-const content = hero && marked.parse(hero.data.content);
+console.log(hero);
+
+// const content = hero && marked.parse(hero.data.content);
 ---
 
 <section id="hero" class="">
@@ -12,17 +15,17 @@ const content = hero && marked.parse(hero.data.content);
     <div class="col-span-full md:col-span-4">
       {
         hero && (
-          <Image
-            class="w-72"
-            src={hero.data.image}
-            alt="Elio Qoshi signature"
-          />
+          // <Image
+          //   class="w-72"
+          //   src={hero.data.image}
+          //   alt="Elio Qoshi signature"
+          // />
         )
       }
     </div>
-    <div
+    <!-- <div
       set:html={content}
       class="order-first col-span-10 flex flex-col gap-4 font-serif text-[2rem] leading-10 font-normal md:order-last md:col-span-8"
-    />
+    /> -->
   </div>
 </section>
