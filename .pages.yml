@@ -11,6 +11,7 @@ content:
     fields:
       - name: id
         label: Section name
+        hidden: true
         type: string
         default: "hero"
       - name: content
