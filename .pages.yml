@@ -7,17 +7,17 @@ content:
     label: Hero content
     path: src/data/heroTest.yaml
     type: file
+    list: true
     fields:
       - name: id
         label: Section name
-        type: object
-        list: true
-        fields:
-        - name: content
-          label: Content
-          type: rich-text
-          options:
-            media: false
-        - name: image
-          label: Image
-          type: image
+        type: string
+        default: "hero"
+      - name: content
+        label: Content
+        type: rich-text
+        options:
+          media: false
+      - name: image
+        label: Image
+        type: image
