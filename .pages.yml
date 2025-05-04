@@ -3,10 +3,10 @@ media:
   output: /src/assets
 content:
   - name: hero
-    format: yaml
     label: Hero content
     path: src/data/heroTest.yaml
     type: file
+    format: yaml
     list: true
     fields:
       - name: id
