@@ -1,37 +1,48 @@
 - id: Ura Design
-  description: >-
-    the design agency helping +100 open source projects succeed
+  description: the design agency helping +100 open source projects succeed
   role: Principal Designer & Founder
   period: 2016-Today
   image:
     src: assets/ura-logo.svg
     align: center
     colorized: false
+  container_size: short
   background:
     primary_color: navy50
-  container_size: short
+    secondary_color: navy50
 - id: Thunderbird
-  description: >-
-    refreshing the visual identity of the leading email client
+  description: refreshing the visual identity of the leading email client
   role: Design Contributor
   period: 2017-2022
   image:
     src: assets/thunderbird.png
     align: bottom
     colorized: false
+  container_size: tall
   background:
     primary_color: navy50
     secondary_color: purple
-  container_size: tall
 - id: Ubuntu
-  description: >-
-    the most popular Linux operating system with over 40 Million users
+  description: the most popular Linux operating system with over 40 Million users
   role: UX Designer
   period: 2021-2024
   image:
     src: assets/ubuntu.png
     align: bottom
     colorized: false
+  container_size: tall
   background:
     primary_color: salmon
+    secondary_color: salmon
+- id: Cultivating Design Meetup
+  description: the Berlin design meetup for +100 of attendees who care about
+    sustainability, accessibility and open source
+  role: Co-organizer
+  period: 2023-Today
+  image:
+    src: assets/cultivating-design-meetup.jpg
+    align: bottom
+    colorized: true
   container_size: tall
+  background:
+    primary_color: mint
